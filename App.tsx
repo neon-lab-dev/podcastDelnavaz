@@ -1,12 +1,8 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import Splash from './src/Screens/Splash';
 
 const App = () => {
-  return (
-    <View>
-      <Text>Podcast</Text>
-    </View>
-  );
+  return <Splash />;
 };
 
 export default App;

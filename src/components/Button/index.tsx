@@ -1,21 +1,39 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {
+  GestureResponderEvent,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
-import {s, vs} from 'react-native-size-matters';
+import {ms, s, vs} from 'react-native-size-matters';
 
-const AppButton = ({text, onPress}) => {
+interface AppButtonProps {
+  text: string;
+  onPress: (event: GestureResponderEvent) => void;
+}
+
+const AppButton: React.FC<AppButtonProps> = ({text, onPress}) => {
   return (
-    <View
-      style={{
-        width: s(300),
-        height: vs(50),
-        backgroundColor: '#463730',
-        borderRadius: 8,
-      }}>
-      <Text>{text}</Text>
-    </View>
+    <TouchableOpacity onPress={onPress} style={styles.buttonContainer}>
+      <Text style={styles.buttonText}>{text}</Text>
+    </TouchableOpacity>
   );
 };
-
 export default AppButton;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  buttonContainer: {
+    width: s(310),
+    height: vs(50),
+    backgroundColor: '#463730',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontFamily: 'Inter-Regular',
+    color: '#FFFFFF',
+    textAlign: 'center',
+    fontSize: ms(18),
+  },
+});
