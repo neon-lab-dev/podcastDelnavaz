@@ -7,9 +7,14 @@ import CategoriesScreen from '../Screens/Categories';
 import StreamingScreen from '../Screens/Streaming';
 import GetIcon from '../utils/GetIcon';
 import {vs} from 'react-native-size-matters';
+import EditProfile from '../Screens/EditProfile';
+import {createStackNavigator} from '@react-navigation/stack';
+import AboutUs from '../Screens/AboutUs';
+import {NavigationContainer} from '@react-navigation/native';
 
 const AppTab = createBottomTabNavigator();
 
+const Stack = createStackNavigator();
 const AppNavigator = () => {
   return (
     <AppTab.Navigator
@@ -45,9 +50,17 @@ const AppNavigator = () => {
         component={HomeScreen}
         options={{headerShown: false}}
       />
-      <AppTab.Screen name="Categories" component={CategoriesScreen} />
+      <AppTab.Screen
+        name="Categories"
+        component={CategoriesScreen}
+        options={{headerShown: false}}
+      />
       <AppTab.Screen name="Streaming" component={StreamingScreen} />
-      <AppTab.Screen name="Profile" component={ProfileScreen} />
+      <AppTab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{headerShown: false}}
+      />
     </AppTab.Navigator>
   );
 };

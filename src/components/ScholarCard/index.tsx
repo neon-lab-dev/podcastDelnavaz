@@ -18,7 +18,7 @@ export default ScholarCard;
 
 const styles = StyleSheet.create({
   container: {
-    width: s(260),
+    width: s(240),
     height: vs(200),
     overflow: 'hidden',
   },
